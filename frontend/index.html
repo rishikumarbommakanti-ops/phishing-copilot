@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Phishing Copilot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Phishing Copilot</h1>
+            <p>AI-powered email security analyzer powered by Google Gemini</p>
+        </header>
+        <main>
+            <form id="analyzeForm" class="form-section">
+                <div class="form-group">
+                    <label for="sender">📧 Email From:</label>
+                    <input type="email" id="sender" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">📝 Subject:</label>
+                    <input type="text" id="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="body">💬 Body:</label>
+                    <textarea id="body" rows="8" required></textarea>
+                </div>
+                <button type="submit" class="btn-analyze">Analyze</button>
+            </form>
+            <div id="results" style="display:none">
+                <div id="riskBadge" class="risk-badge"></div>
+                <div class="result-item"><strong>Status:</strong> <span id="phishingStatus"></span></div>
+                <div class="result-item"><strong>Risk:</strong> <span id="riskLevel"></span></div>
+                <div class="result-item"><strong>Confidence:</strong> <span id="confidence"></span></div>
+                <div class="result-item"><strong>🚩 Elements:</strong><ul id="suspiciousElements"></ul></div>
+                <div class="result-item"><strong>✅ Actions:</strong><ul id="recommendedActions"></ul></div>
+                <button onclick="resetForm()" class="btn-reset">Analyze Another</button>
+            </div>
+            <div id="loading" style="display:none"><div class="spinner"></div><p>Analyzing...</p></div>
+        </main>
+        <footer><p>Phishing Copilot v1.0 | Powered by Google Gemini</p></footer>
+    </div>
+    <script src="script.js"><\/script>
+</body>
+</html>
